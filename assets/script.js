@@ -16,36 +16,26 @@ var li3 = document.createElement("li");
 var li4 = document.createElement("li");
 
 h1El.textContent = "Welcome to the Coders Quiz";
-kittenEl.textContent = "You are timed for each answer";
+quizEl.textContent = "You are timed for each answer";
 nameEl.textContent = "If you miss a question you are deducted time";
 favoriteEl.textContent = "Answer A, B, C or D";
 
-//Text for options
-li1.textContent = "Apples";
-listEl.appendChild(li1);
-li2.textContent = "Pizza";
-listEl.appendChild(li2);
-li3.textContent = "Dumplings";
-listEl.appendChild(li3);
-li4.textContent = "Cupcakes";
-listEl.appendChild(li4);
-
-body.appendChild(h1El);
-body.appendChild(infoEl);
-infoEl.appendChild(imgEl);
-infoEl.appendChild(kittenEl);
-infoEl.appendChild(nameEl);
-body.appendChild(favoriteEl);
-favoriteEl.appendChild(listEl);
-
-// Append ordered list
-favoriteEl.appendChild(listEl);
-
-//Append list of favorite foods to ordered LE
-listEl.appendChild(li1);
-listEl.appendChild(li2);
-listEl.appendChild(li3);
-listEl.appendChild(li4);
+//Text for questions
+var questionArray = {
+    text: "The append.child element is an example of:",
+    choices: ["A CSS condition", "Dynmaic Programming Language", "aritifical intelligence", "A Git Bash code"]
+    answer: "Dynmaic Programming Language"
+},
+{ 
+    text: "Else and If functions are commonly seen in:",
+    choices: ["CSS Conditions", "HTML language", "Javascript elements", "APIs"]
+    answer: "CSS Condition"
+},
+{
+    text: "What is the function that happens when you pass a function into a function:",
+    choices: ["An addevent listener", "A skip function", "A call back function", "a var function"]
+    answer: "A call back"
+}
 
 h1El.setAttribute("style", "margin:auto; width:50%; text-align:center;");
 infoEl.setAttribute("style", "margin:auto; width:50%; text-align:center;");

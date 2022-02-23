@@ -5,45 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coding Quiz</title>
-</head>
-<body>
+  <link href = "assets\stylesheet.css">
   <script src="assets\script.js"></script>
+
+</head>
+
+<body>
+<div class = "header">
+    <h1>Coding Quiz</h1>
+    <div class = "results">
+        <h2> You scored: Not yet attempted</h2>
+</div>
+</div>
+<div class = "body">
+    <form name="quiz" onsubmit="return onSubmit()"
+        <div class = "question">
+</div>
 </body>
 </html>
 
 <h3>The append.child element is an example of:</h3>
-<input type="radio" id="html" value="A CSS condition">
-<label for="A CSS condition">A CSS condition</label><br>
-<input type="radio" id="Dynamic Programming Language"value="Dynamic Programming Language>
-<label for="Dynmaic Programming Language">Dynamic Programming Language</label><br>
-<input type="radio" id="Artifical Intelligence" value="Artificial Intelligence">
-<label for="Artificial Intelligence">Aritifical Intelligenge</label></br>
-<input type="radio" id="Git Bash Code" value="A Git Bash Code">
-<label for="A Git Bash Code">A git bash code</label><br>
+<input type="radio" name ="q1" value="A">A. CSS condition<br>
+<input type="radio" name="q1" value= "B"> B. Dynamic Programming Language><br>
+<input type="radio" name="q1" value="C"> C. Artificial Intelligence <br>
+<input type="radio" name="q1" value="D"> D. A Git Bash Code <br>
+
 
 <h3>Else and If functions are commonly seen in::</h3>
-<input type="radio" id="CSS Conditions" value="CSS conditions">
-<label for="A CSS condition">A CSS condition</label><br>
-<input type="radio" id="HTML Language"value="HTML Language>
-<label for="HTML Language">HTML languageb</label><br>
-<input type="radio" id="Javascript elements" value="Javascript elements">
-<label for="Javascript Elements">Javascript Elements</label></br>
-<input type="radio" id="APIs" value="APIs>
-<label for="APIs">APIs</label><br>
+<input type="radio" name="q2" value="A"> A. CSS conditions <br>
+<input type="radio" name="q2"value="B"> B. HTML Language <br>
+<input type="radio" name="q2" value="C"> C. Javascript elements <br>
+<input type="radio" name="q2" value="D"> D. APIs <br>
 
 <h3>What is the function that happends when you pass a function into a function?:</h3>
-<input type="radio" id="An advent listener" value="CSS conditions">
-<label for="A CSS condition">A CSS condition</label><br>
-<input type="radio" id="HTML Language"value="HTML Language>
-<label for="HTML Language">HTML languageb</label><br>
-<input type="radio" id="Javascript elements" value="Javascript elements">
-<label for="Javascript Elements">Javascript Elements</label></br>
-<input type="radio" id="APIs" value="APIs>
-<label for="APIs">APIs</label><br>
+<input type="radio" name="q3" value="A"> A. adEvent Listener <br>
+<input type="radio" name="q3" value="B"> B. a skip function <br>
+<input type="radio" name="q3" value="C"> C. call back function <br>
+<input type="radio" name="q4" value="D"> D. a var function <br>
 
-},
-{
-    text: "What is the function that happens when you pass a function into a function:",
-    choices: ["An addevent listener", "A skip function", "A call back function", "a var function"]
-    answer: "A call back function"
-}
+
+<div id="quiz"></div>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div>
+
