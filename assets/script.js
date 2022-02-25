@@ -27,3 +27,8 @@ for(var i = 1; i<=numofQuestions; i++){
     results.innerHTML="<h2>You Scored" + score + "points out of " + numOfQuestions + "</h2>"
     alert ("You Scored " + score + "out of" + numOfQuestions)
 }
+
+// Setting function for local storage
+
+localStorage.setItem("user", JSON.stringify(user));
+});
