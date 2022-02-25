@@ -15,6 +15,7 @@ for(var i = 1; i<=numofQuestions; i++){
     if(eval("q" + i) == ""){
         alert("You missed question number" + i);
     }
+}
 
     for(var i=1; i <=numOfQuestions; i++){
         if(eval("q" + i) == ansArr[i-1]{

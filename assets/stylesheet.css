@@ -1,12 +1,16 @@
-.header{
-  background-image: linear-gradient(rgb(97, 174, 204, rgb(79, 53, 151, rgb(108, 108, 156));
+*{
+    box-sizing: border-box;
+}
+
+.head{
+  background-image: linear-gradient(rgb(97, 174, 204, rgb)(rgb(108, 108, 156);
   text-align: center;
   color: rgb(224, 214, 214);
   border-radius: 10px;
   padding: 1 0 1 0;
 }
 
-.body{
+body {
     text-align: center;
     border-style: solid;
     border: 3 3 3 3;
@@ -14,7 +18,7 @@
     margin-top: 5px;
 }
 
-.question{
+question {
     text-align: center;
     border-style: solid;
     border: 3 3 3 3;
@@ -23,4 +27,5 @@
     margin-left: 15%;
     margin-right: 15%;
     background-color:rgb(224, 214, 214);
+    padding-bottom: 5px;
 }
