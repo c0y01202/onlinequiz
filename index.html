@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Coding Quiz</title>
-  <link rel = "stylesheet" href = "/assets/stylesheet.css">
-  <script src="assets/script.js"></script>
-  <div id = "header">
-    <h1>Coding Quiz</h1>
-    <div class = "results">
-        <h2> You scored: Not yet attempted</h2>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Coding Quiz </title>
+        <link rel="stylesheet" href="assets/stylesheet.css">
+    </head>
 
-<body>
+    <body> 
 
-</div>
+        <header>
+            <h4 id="view-high-scores">View High Scores</h4> 
+            <h4 class="timer">Time: <span id="timer"></span></h4>
+        </header>
 
-<div class = "body">
-    <form name="quiz" onsubmit="return onSubmit()">
-    </form>
+        <div id="starter-container" class="show">
+            <div class="container start">
+                <h1>Coding Quiz Challenge</h1>  
+                <p>You have are times during this quiz. You'll gain points for correct answers!
+                Keep in mind that incorrect answers will penalize your score by 2 points and your time by 3 seconds!
+                </p>
+                <button class="btn startend" id="start-game">Start Quiz</button>
+            </div>    
+        </div>
 
+        <div id="question-container" class="hide">
+            <div class="container questions">
+                <div id="question"></div>
+                <div id="answer-buttons" class="btn-grid"></div>
+            </div>
+        </div>
 
-<div class = "question">
-<h1>The append.child element is an example of:</h1>
-<input type="radio" name="q1" value="A">A. CSS condition<br>
-<input type="radio" name="q1" value= "B"> B. Dynamic Programming Language><br>
-<input type="radio" name="q1" value="C"> C. Artificial Intelligence <br>
-<input type="radio" name="q1" value="D"> D. A Git Bash Code <br>
-</div>
+        <div id="end-container" class="hide">
+           <div class="container end">
+            <div id=score-banner>
+                <h1>All done!</h1>
+            </div>  
+            <form id="initials-form" class="initials">
+              <p> Enter Initials:
+                <input type="text" name="initials" id="initials" class="text-input" />
+                <button class="btn startend" id="sumbit-score" type="submit">Submit</button> </p>
+              </form>
+            </div>
+        </div>
 
-<div class = "question">
-<h1>Else and If functions are commonly seen in:</h1>
-<input type="radio" name="q2" value="A"> A. CSS conditions <br>
-<input type="radio" name="q2"value="B"> B. HTML Language <br>
-<input type="radio" name="q2" value="C"> C. Javascript elements <br>
-<input type="radio" name="q2" value="D"> D. APIs <br>
-</div>
+        <div id="high-score-container" class="hide">
+          <div class="high-scores container">
+            <h1 class="high-score">High Scores</h1>
+            <ol id="high-score-list" class="score-list"></ol>
+        <div>
+            <button class="btn" id="go-back">Go back</button>
+            <button class="btn" id="clear-high-scores">Clear high scores</button>
+        </div>
+        </div>
+    </div>
 
-<div class = "question">
-<h1>What is the function that happends when you pass a function into a function?:</h1>
-<input type="radio" name="q3" value="A"> A. adEvent Listener <br>
-<input type="radio" name="q3" value="B"> B. a "skip" function <br>
-<input type="radio" name="q3" value="C"> C. a "call back" function <br>
-<input type="radio" name="q3" value="D"> D. a "var" function <br>
-</div>
+    <div class="hide" id="correct">
+        <h2>Correct :)!</h2>
+    </div>
+    <div class="hide" id="wrong">
+        <h2>Wrong :( </h2>
+    </div>
 
-<div class = "question">
-<h1>What does CSS stand for?:</h1>
-<input type="radio" name="q4" value="A"> A. Computer Standard Style <br>
-<input type="radio" name="q4" value="B"> B. Cascading Style Sheet <br>
-<input type="radio" name="q4" value="C"> C. Computational Style Sheets <br>
-<input type="radio" name="q4" value="D"> D. Cascading Standard Sheet <br>
-</div>
-
-<div class = "question">
-<h1>What lamguage can manipulate code for DOM?:</h1>
-<input type="radio" name="q5" value="A"> A. CSS <br>
-<input type="radio" name="q5" value="B"> B. HTML <br>
-<input type="radio" name="q5" value="C"> C. Javascript <br>
-<input type="radio" name="q5" value="D"> D. JSON <br>
-</div>
-<button type="submit">Submit Quiz</button>
+    <script src="assets/script.js"></script> 
 </body>
-
 </html>
