@@ -156,7 +156,7 @@ var displayQuestion = function (index) {
     var answerbutton = document.createElement("button");
     answerbutton.innerText = index.choices[i].choice;
     answerbutton.classList.add("btn");
-    answerbutton.classList.add("answerbtn");
+    //answerbutton.classList.add("answerbtn");
     answerbutton.addEventListener("click", answerCheck);
     answerbuttonsEl.appendChild(answerbutton);
   }
