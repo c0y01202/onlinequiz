@@ -8,11 +8,11 @@ var ViewHighScoreEl = document.getElementById("view-high-scores");
 var listHighScoreEl = document.getElementById("high-score-list");
 var correctEl = document.getElementById("correct");
 var wrongEl = document.getElementById("wrong");
-//buttons
+//variables for buttons
 var btnStartEl = document.querySelector("#start-game");
 var btnGoBackEl = document.querySelector("#go-back");
 var btnClearScoresEl = document.querySelector("#clear-high-scores");
-//questions/answers element
+//questions and answers elements
 var questionEl = document.getElementById("question");
 var answerbuttonsEl = document.getElementById("answer-buttons");
 var timerEl = document.querySelector("#timer");
@@ -21,14 +21,14 @@ var timeleft;
 var gameover;
 timerEl.innerText = 0;
 
-//High Score Array
+//high score array
 var HighScores = [];
 
 //assign array details for questions
 var arrayShuffledQuestions;
 var QuestionIndex = 0;
 
-// Questions for the quiz
+// Questions on the quiz with multiple choice
 var questions = [
   {
     q: "The append.child element is an example of: __________.",
@@ -51,7 +51,7 @@ var questions = [
     ],
   },
   {
-    q: "What is the function that happends when you pass a function into a function?",
+    q: "What is the function called when you pass a function into another function?",
     a: "c. a callback function",
     choices: [
       { choice: "a. adEvent Listener" },
@@ -62,7 +62,7 @@ var questions = [
   },
   {
     q: "What does CSS stand for?",
-    a: "b. Cascadingn Style Sheet",
+    a: "b. Cascading Style Sheet",
     choices: [
       { choice: "a. Computer Standard Style" },
       { choice: "b. Cascading Style Sheet" },
@@ -71,7 +71,7 @@ var questions = [
     ],
   },
   {
-    q: "What lamguage can manipulate code for DOM?",
+    q: "What lamguage can manipulate code for a DOM?",
     a: "c. Javascript",
     choices: [
       { choice: "a. CSS" },
@@ -82,7 +82,7 @@ var questions = [
   },
 ];
 
-//if go back button is hit on high score page
+//condition for starting quiz over
 function renderStartPage() {
   containerHighScoresEl.classList.add("hide");
   containerHighScoresEl.classList.remove("show");
@@ -104,7 +104,7 @@ function renderStartPage() {
   }
 }
 
-//every second, check if game-over is true, or if there is time left. Start time at 30.
+//start time at 30 and chec if true after every click on answer
 var setTime = function () {
   timeleft = 30;
 
@@ -125,31 +125,31 @@ var setTime = function () {
 };
 
 var startGame = function () {
-  //add classes to show/hide start and quiz screen
+  //function to generate questions on page
   containerStartEl.classList.add("hide");
   containerStartEl.classList.remove("show");
   containerQuestionEl.classList.remove("hide");
   containerQuestionEl.classList.add("show");
-  //Shuffle the questions so they show in random order
+  //array to randomize questions
   arrayShuffledQuestions = questions.sort(() => Math.random() - 0.5);
   setTime();
   setQuestion();
 };
 
-//set next question for quiz
+//display next question after one is answered
 var setQuestion = function () {
   resetAnswers();
   displayQuestion(arrayShuffledQuestions[QuestionIndex]);
 };
 
-//remove answer buttons
+//reset answers
 var resetAnswers = function () {
   while (answerbuttonsEl.firstChild) {
     answerbuttonsEl.removeChild(answerbuttonsEl.firstChild);
   }
 };
 
-//display question information (including answer buttons)
+//function to show questions and buttons
 var displayQuestion = function (index) {
   questionEl.innerText = index.q;
   for (var i = 0; i < index.choices.length; i++) {
@@ -161,7 +161,7 @@ var displayQuestion = function (index) {
     answerbuttonsEl.appendChild(answerbutton);
   }
 };
-//display correct! on screen
+//show correct!
 var answerCorrect = function () {
   if ((correctEl.className = "hide")) {
     correctEl.classList.remove("hide");
@@ -170,7 +170,7 @@ var answerCorrect = function () {
     wrongEl.classList.add("hide");
   }
 };
-//display wrong! on screen
+//show wrong!
 var answerWrong = function () {
   if ((wrongEl.className = "hide")) {
     wrongEl.classList.remove("hide");
@@ -180,7 +180,7 @@ var answerWrong = function () {
   }
 };
 
-//check if answer is correct
+//display answer if correct
 var answerCheck = function (event) {
   var selectedanswer = event.target;
   if (arrayShuffledQuestions[QuestionIndex].a === selectedanswer.innerText) {
@@ -192,7 +192,7 @@ var answerCheck = function (event) {
     timeleft = timeleft - 3;
   }
 
-  //go to next question, check if there is more questions
+  //generates the next question
   QuestionIndex++;
   if (arrayShuffledQuestions.length > QuestionIndex + 1) {
     setQuestion();
@@ -202,7 +202,7 @@ var answerCheck = function (event) {
   }
 };
 
-//Display total score screen at end of game
+//render complete score at end of online quiz
 var showScore = function () {
   containerQuestionEl.classList.add("hide");
   containerEndEl.classList.remove("hide");
@@ -213,7 +213,7 @@ var showScore = function () {
   containerScoreEl.appendChild(scoreDisplay);
 };
 
-//create high score values
+//generate value for high score
 var createHighScore = function (event) {
   event.preventDefault();
   var initials = document.querySelector("#initials").value;
@@ -229,17 +229,17 @@ var createHighScore = function (event) {
     score: score,
   };
 
-  //push and sort scores
+  //pushes high scores to storage
   HighScores.push(HighScore);
   HighScores.sort((a, b) => {
     return b.score - a.score;
   });
 
-  //clear visibile list to resort
+  //lists high score
   while (listHighScoreEl.firstChild) {
     listHighScoreEl.removeChild(listHighScoreEl.firstChild);
   }
-  //create elements in order of high scores
+  //sorts scores by value and initial
   for (var i = 0; i < HighScores.length; i++) {
     var highscoreEl = document.createElement("li");
     highscoreEl.ClassName = "high-score";
@@ -251,12 +251,12 @@ var createHighScore = function (event) {
   saveHighScore();
   displayHighScores();
 };
-//save high score
+//event to store high score on DOM
 var saveHighScore = function () {
   localStorage.setItem("HighScores", JSON.stringify(HighScores));
 };
 
-//load values/ called on page load
+//pushes value of high score to the DOM
 var loadHighScore = function () {
   var LoadedHighScores = localStorage.getItem("HighScores");
   if (!LoadedHighScores) {
@@ -279,7 +279,7 @@ var loadHighScore = function () {
   }
 };
 
-//display high score screen from link or when intiials entered
+//renders high scores on page in order
 var displayHighScores = function () {
   containerHighScoresEl.classList.remove("hide");
   containerHighScoresEl.classList.add("show");
@@ -309,7 +309,7 @@ var displayHighScores = function () {
     wrongEl.classList.add("hide");
   }
 };
-//clears high scores
+//removes the list of scores from the page
 var clearScores = function () {
   HighScores = [];
 
@@ -322,13 +322,13 @@ var clearScores = function () {
 
 loadHighScore();
 
-//on start click, start game
+//click start to start game
 btnStartEl.addEventListener("click", startGame);
-//on submit button -- enter or click
+//click submit to get highs score
 formInitials.addEventListener("submit", createHighScore);
-//when view high-scores is clicked
+//to view high scores
 ViewHighScoreEl.addEventListener("click", displayHighScores);
-//Go back button
+//go back to start page
 btnGoBackEl.addEventListener("click", renderStartPage);
 //clear scores button
 btnClearScoresEl.addEventListener("click", clearScores);
