@@ -71,7 +71,7 @@ var questions = [
     ],
   },
   {
-    q: "What lamguage can manipulate code for a DOM?",
+    q: "What language can manipulate code for a DOM?",
     a: "c. Javascript",
     choices: [
       { choice: "a. CSS" },
