@@ -1,6 +1,6 @@
 ![index_page_1](https://user-images.githubusercontent.com/97765679/156672052-4ff7128e-1dcd-4da8-81e1-4fc9cba9a1b9.png)
 ![questions_page](https://user-images.githubusercontent.com/97765679/156672054-e8701121-ed04-4cd5-89ee-f588f15c5d0b.png)
-# Online Quiz
+# Online Quiz This tutorial is copyrighted in 2022. PLEASE DO NOT COPY.
 
 # H1 Online Quiz
 
