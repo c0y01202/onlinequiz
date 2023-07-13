@@ -24,3 +24,5 @@ https://c0y01202.github.io/onlinequiz/
 
 Images from the index page
 ![Image of the index.html] ("assets\images\index_page_1.png")
+
+Copyright 2022, Claudia Chittim
